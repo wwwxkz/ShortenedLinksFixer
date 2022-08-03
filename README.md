@@ -1,4 +1,4 @@
-# linkShortenedFixer
+# ShortenedLinksFixer
 
 Plugin created to fix shortened links with bit.ly and tinyurl, the providers of the service can be changed the in the code, and if it keeps the pattern of base/hash-to-your-page it will work
 
