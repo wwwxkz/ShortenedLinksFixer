@@ -2,7 +2,7 @@
 
 Plugin created to fix shortened links with bit.ly and tinyurl, the providers of the service can be changed the in the code, and if it keeps the pattern of base/hash-to-your-page it will work
 
-Explaining my use, I used the plugin Search Regex with these 2 regular expressions
+Explaining my use, I used the Wordpress plugin Search Regex with these 2 regular expressions
 
 ```https://bit.ly/(.*?)\W```
 ```https://tinyurl.com/(.*?)\W```
