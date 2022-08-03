@@ -23,3 +23,5 @@ and ran the code with
 I did some other filters in this output.txt and asked for my coworkers verify
 
 then I used the same plugin and replaced the shortened links with the direct link as it was not necessary for us anymore
+
+if there is a images/ folder in your redirected url, the plugin will try to download the url and save with the name that comes after images/, it will keep the file extension .pdf, .docx, .png, so on
