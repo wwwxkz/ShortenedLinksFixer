@@ -28,7 +28,7 @@ def loop_through_urls_found(urls, url_provider_base):
             else:
                 # Print redirections end
                 print('From: ' + url + ' - To ' + redirect.url + '\n')
-                url_logger.append(url)
+	    url_logger.append(url)
 
 for i in data:
     # Regex based in my use
