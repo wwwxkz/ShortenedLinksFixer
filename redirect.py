@@ -4,18 +4,18 @@ import requests
 
 f = open('export.json')
 data = json.load(f)
+# Log past url cases, if it appears again, do nothing
+url_logger = []
 
 def loop_through_urls_found(urls, url_provider_base):
     # Header to access websites that requires it
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0'}
-    # Log past url cases, if it appears again, do nothing
-    url_logger = []
     for url in urls:
         url_short = url_provider_base + url
         # Do not show duplicates 
-        for url_log in url_logger:
-            if(url_log == url):
-                url_short = ''
+        for url_in_logger in url_logger:
+            if(url_in_logger == url):
+                continue
         # Checks for empty url
         if(url_short != ''):
             redirect = requests.get(url_short, allow_redirects=True, headers=headers)
@@ -28,7 +28,7 @@ def loop_through_urls_found(urls, url_provider_base):
             else:
                 # Print redirections end
                 print('From: ' + url + ' - To ' + redirect.url + '\n')
-	    url_logger.append(url)
+            url_logger.append(url)
 
 for i in data:
     # Regex based in my use
