@@ -2,12 +2,9 @@ import json
 import re
 import requests
 
-f = open('export.json')
-data = json.load(f)
-# Log past url cases, if it appears again, do nothing
-url_logger = []
-
 def loop_through_urls_found(urls, url_provider_base):
+    # Log past url cases, if it appears again, do nothing
+    url_logger = []
     # Header to access websites that requires it
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0'}
     for url in urls:
@@ -30,6 +27,8 @@ def loop_through_urls_found(urls, url_provider_base):
                 print('From: ' + url + ' - To ' + redirect.url + '\n')
             url_logger.append(url)
 
+f = open('export.json')
+data = json.load(f)
 for i in data:
     # Regex based in my use
     url_bit_ly = re.findall("https://bit.ly/(.*?)\W", i['post_content'])
